@@ -1,0 +1,37 @@
+<!---footer strat here ------------->
+
+<footer class="main-footer padding-panel">
+  <div class="footer-top">
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <form class="foot-form mr-50" (ngSubmit)="onSubscribe()" [formGroup]="subscribeForm">
+          <label>Stay in touch</label>
+          <div class="d-flex">
+            <input type="text" formControlName="email" class="form-control" placeholder="Enter your email"
+            [ngClass]="{ 'is-invalid': submitted && !subscribeForm.get('email').valid  }">
+            <button class="btn" type="submit" name="button">Submit</button>
+          </div>
+          <p *ngIf="datasaved" class="success"> <i class="fas fa-check"></i> <span>{{msg}}</span> </p>
+        </form>
+
+        <div class="foot-follow mb-30">
+          <label>Follow Us:</label>
+          <ul class="footer-social-list d-flex">
+            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+            <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="text-center">
+        © 2019 Zeil El Dine International. All right reserved.
+      </div>
+    </div>
+  </div>
+
+</footer>
+<!--- footer end here ----------------->
+

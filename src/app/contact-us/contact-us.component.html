@@ -1,0 +1,72 @@
+<app-header></app-header>
+<div class="contact-us">
+  <div class="contact-inner">
+    <div class="page-heading text-center">
+      <h1 class="">contact us</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="contact-add">
+          <address>
+            <i class="fas fa-map-marker-alt"></i>
+            (Nakamura-ku, Nagoya), Japan,
+            Nagoya shi, Nakamuraku, Meiekiminami
+            3-3-21 BIAN CASA Kakomachi 2F 〒450-0003
+          </address>
+
+          <a class="con-mail" href="info@zedinternational.net"><i class="fas fa-envelope"></i> info@zedinternational.net</a>
+          <a class="con-tel mb-0" href="tel:+81524854301"><i class="fas fa-mobile-alt"></i>(+81) 52 485 4301 </a>
+        </div>
+
+        <form (ngSubmit)="onContact()" [formGroup]="contactForm">
+          <div class="form-group">
+            <label class="mb-0">Name</label> <span class="mandatory">*</span>
+            <input type="text"  class="form-control" formControlName="name" autocomplete="off"
+            [ngClass]="{ 'is-invalid': submitted && !contactForm.get('name').valid  }">
+          </div>
+
+          <div class="form-group">
+            <label class="mb-0">Email</label> <span class="mandatory">*</span>
+            <input type="email" formControlName="email" class="form-control" autocomplete="off"
+            [ngClass]="{ 'is-invalid': submitted && !contactForm.get('email').valid  }">
+          </div>
+
+          <div class="form-group">
+            <label class="mb-0">Phone Number</label>
+            <input type="tel" formControlName="phone"
+            [textMask]="{mask: mask}" class="form-control" autocomplete="off" 
+            [ngClass]="{ 'is-invalid': submitted && !contactForm.get('phone').valid  }">
+          </div>
+
+          <div class="form-group">
+            <label class="mb-10">Message</label>
+            <textarea class="form-control" formControlName="message" rows="5" cols="50" placeholder="Your message..."  
+            [ngClass]="{ 'is-invalid': submitted && !contactForm.get('message').valid  }">
+          </textarea>
+          </div>
+
+          <div class="">
+            <div class="btn-row">
+              <input type="submit" class="btn" value="Submit">
+            </div>
+          </div>
+          <p *ngIf="datasaved" class="success"> <i class="fas fa-check"></i> <span>{{msg}}</span> </p>
+        </form>
+      </div>
+
+      <div class="col-md-6">
+        <div class="contact-map">
+          <div class="contact-map-inner" style="width: 100%;position: relative;">
+            <iframe width="100%" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=japan+(Title)&amp;ie=UTF8&amp;t=&amp;z=5&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
+              <small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="http://www.googlemapsgenerator.com/en/">Googlemapsgenerator.com/en/</a> & <a href="http://merrymobiles.co.uk/">loadonlineph</a></small>
+            </div>
+            <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+          </div><br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

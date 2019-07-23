@@ -1,0 +1,99 @@
+
+
+<!-- header nav ---------->
+<div class="header-nav" id="header-nav">
+  <div class="top-nav-outer">
+    <div class="d-flex justify-content-between top-nav align-items-center">
+      <ul class="top-first-nav"><li><i class="fas fa-bars"></i></li></ul>
+      <div class="top-middle">Ohh Fashion Agency</div>
+      <ul class="top-last-nav d-flex align-items-center justify-content-end">
+        <li><a href="javascript:;">Login</a></li>
+        <li>
+          <ul class="flag d-flex">
+            <li><a href="javascript:;"><img src="../../assets/images/flag/uk.png"></a></li>
+            <li><a href="javascript:;"><img src="../../assets/images/flag/japan.png"></a></li>
+            <li><a href="javascript:;"><img src="../../assets/images/flag/vietnam.png"></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <ul class="main-nav d-flex">
+    <h3 class="top-middle">Ohh Fashion Agency</h3>
+
+    <li>
+      <a [routerLink]="['/aboutUs']">
+        <img  src="../../assets/images/nav-img/nav-img1.jpg" >
+        <span class="nav-word">About Us</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/models']">
+        <img src="../../assets/images/nav-img/nav-img2.jpg">
+        <span class="nav-word">Our Model / Influencers</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/event']">
+        <img src="../../assets/images/nav-img/nav-img3.jpg">
+        <span class="nav-word">Events</span>
+      </a>
+    </li>
+    <li class="drop-down">
+        <a>
+          <img src="../../assets/images/nav-img/nav-img4.jpg">
+          <span class="nav-word">Join Us / Find Talents</span>
+        </a>
+        <ul class="sub-menu">
+          <li><a [routerLink]="['/joinUs']">Join Us</a></li>
+          <li><a [routerLink]="['/findTalents']">Find Talents</a></li>
+        </ul>
+      </li>
+    
+    <li>
+      <a [routerLink]="['/contactUs']">
+        <img src="../../assets/images/nav-img/nav-img5.jpg" >
+        <span class="nav-word">Contact Us</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="mobile-menu">
+    <h3 class="top-middle">Ohh Fashion Agency</h3>
+
+    <ul class="main-nav d-flex">
+      <li>
+        <a [routerLink]="['/aboutUs']">
+          <img  src="../../assets/images/nav-img/nav-img1.jpg">
+          <span class="nav-word" >About Us</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/models']">
+          <img src="../../assets/images/nav-img/nav-img2.jpg">
+          <span class="nav-word">Our Model / Influencers</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/event']">
+          <img src="../../assets/images/nav-img/nav-img3.jpg">
+          <span class="nav-word">Events</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/joinUs']">
+          <img src="../../assets/images/nav-img/nav-img4.jpg">
+          <span class="nav-word">Join Us / Find Talents</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/contactUs']">
+          <img src="../../assets/images/nav-img/nav-img5.jpg">
+          <span class="nav-word">Contact Us</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- header nav ---------->

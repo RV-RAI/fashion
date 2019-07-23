@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/ohh-fashion",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

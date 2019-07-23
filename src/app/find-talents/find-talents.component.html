@@ -1,0 +1,115 @@
+<app-header></app-header>
+<div class="padding-panel join-us-panel">
+    <div class="join-us-inner-panel">
+      <div class="page-heading text-center">
+        <h1>Request Talent</h1>
+      </div>
+
+      <img class="mb-30 desk-ban" src="../../assets/images/banner-img/banner-img1.jpg">
+
+      <img class="mb-30 mob-ban" src="../../assets/images/banner-img/banner-img1-mobile.jpg">
+
+      <h4 class="mb-30">Seeking Models, Talent Or Influencers?</h4>
+      <p class="mb-30">Sourcing qualified talent can be challenging and time consuming, which is why SLU is here to help! By providing the info below, we can provide initial suggestions of talent to meet your needs. We respond to every inquiry within 24 hours, but feel free to <a href="#">contact us</a> if you need immediate assistance.</p>
+
+      <form id="form" (ngSubmit)="onSubmit()" [formGroup]="findtalentForm">
+        <div class="list-group">
+          <div class="list-group-item" data-acc-step>
+
+            <h5 class="mb-0" data-acc-title>Contact Info</h5>
+            <div class="list-group-inner" data-acc-content>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="mb-0">Name</label> <span class="mandatory">*</span>
+                    <input type="text" formControlName="name" class="form-control" autocomplete="off"
+                    [ngClass]="{ 'is-invalid': submitted && !findtalentForm.get('name').valid  }">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="mb-0">Email</label> <span class="mandatory">*</span>
+                    <input type="email" formControlName="email" class="form-control" autocomplete="off" 
+                    [ngClass]="{ 'is-invalid': submitted && !findtalentForm.get('email').valid  }">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="mb-0">Company Name</label> <span class="mandatory">*</span>
+                    <input type="text" formControlName="company_name" class="form-control" autocomplete="off"
+                    [ngClass]="{ 'is-invalid': submitted && !findtalentForm.get('company_name').valid  }">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="mb-0">Phone Number</label>
+                    <input type="text" [textMask]="{mask: mask}"  formControlName="phone" class="form-control" autocomplete="off" 
+                    [ngClass]="{ 'is-invalid': submitted && !findtalentForm.get('phone').valid  }">
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label class="mb-0">State where you are located</label>
+                    <input type="text" formControlName="state" class="form-control" autocomplete="off" 
+                    [ngClass]="{ 'is-invalid': submitted && !findtalentForm.get('state').valid  }">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="list-group-item" data-acc-step>
+            <h5 class="mb-0" data-acc-title>Project & Talent Info</h5>
+            <div class="list-group-inner" data-acc-content>
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label>Describe your project and talent needs</label>
+                    <textarea class="form-control" formControlName="project_or_talent" cols="50" rows="5" placeholder="140 character or more"
+                    [ngClass]="{ 'is-invalid': submitted && !findtalentForm.get('project_or_talent').valid}"></textarea>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label>Date(s) and location of production</label>
+                    <input type="text" name="type" formControlName="date_or_location" class="form-control" autocomplete="off" 
+                    [ngClass]="{ 'is-invalid': submitted && !findtalentForm.get('date_or_location').valid}"/>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>How did you hear about us?</label>
+                    <input type="text" formControlName="how_know_about_us"class="form-control" autocomplete="off" 
+                    [ngClass]="{ 'is-invalid': submitted && !findtalentForm.get('how_know_about_us').valid}">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>If you have worked with us before, which office?</label>
+                    <select class="form-control" formControlName="office_choose"
+                    [ngClass]="{ 'is-invalid': submitted && !findtalentForm.get('office_choose').valid}">
+                      <option class="" selected="selected" disabled="disabled">Select an office</option>
+                      <option>Portland</option>
+                      <option>Los Angeles</option>
+                      <option>Miami</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check mb-10">
+                <input type="checkbox" formControlName="checkbox" class="form-check-input" 
+                [ngClass]="{ 'is-invalid': submitted && !findtalentForm.get('checkbox').valid}"/> <label class="form-check-label"> Yes! Send me the Talent Line-Up newsletter. You can unsubscribe any time.</label>
+              </div>
+             
+              <p class="mb-30">By submitting this form you agree to our <a href="#">privacy policy</a></p>
+            </div>
+          </div>
+        </div>
+        <p *ngIf="datasaved" class="success"> <i class="fas fa-check"></i> <span>{{msg}}</span> </p>
+      </form>
+    </div>
+  </div>
+  <app-footer></app-footer>

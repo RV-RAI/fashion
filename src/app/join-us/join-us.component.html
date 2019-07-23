@@ -1,0 +1,386 @@
+<app-header></app-header>
+
+    <div class="model-detail-top text-center">
+        <span class="color-red">CYBER WARNING</span> Beware of unsolicited emails and other contacts claiming to come from Ohh Fashion Agency. Please <a href="#" class="orange-link">click here</a> for full details.
+    </div>
+
+    <div class="join-us-panel padding-panel">
+        <div class="join-us-inner-panel">
+            <div class="page-heading text-center">
+                <h1>Empower Me</h1>
+            </div>
+
+            <p class="mb-30">At ohh fashion, we embrace diversity, trending with the elegance and grace. We aim to provide the safe haven for our talent and supply them with the full support and the same boldness. If these sound like something you want to achieve in your life then this is right place for you.</p>
+            <p class="mb-30">OPEN CALL INFORMATION - Open call is every Wednesday from 2 – 3pm must be: 5’7 – 5’10, at least 15 years old, and have pictures with you.</p>
+
+            <form id="form" (ngSubmit)="onJoin()" [formGroup]="joinForm"  >
+
+                <div class="list-group">
+
+                    <div class="list-group-item" data-acc-step>
+                        <h5 class="mb-0" data-acc-title>Photos & Contact Info</h5>
+                        <div class="list-group-inner" data-acc-content>
+
+                            <p class="mb-30">For your photos, please wear form fitted clothing so that we can clearly see your body shape. Please do not wear any makeup or large accessories for instance hoop earrings or bracelets as they may be distracting. No smiles! Lastly, relax and be your natural and empowered self!</p>
+<ul class="upload-photo-list d-flex mb-50">
+
+<li>
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+                <input type="file" id="imageUpload1" onchange="selecteimg(this)" accept=".png, .jpg, .jpeg" formControlName="image1" class="form-control" />
+                <!-- <input  class="form-control" name="fullLength" 
+                        formControlName="fullLength" type="file" accept="image/*" 
+                        (change)="changeListener($event)"> -->
+                    <label for="imageUpload1"><span class="mb-20"><img src="../../assets/images/submission_add_y.svg"></span><span>Full Length</span></label>
+            </div>
+            <div class="avatar-preview">
+                <div id="imagePreview1" class="image-submition1 image-submition"></div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+                <input type="file" id="imageUpload2" 
+                accept=".png, .jpg, .jpeg" formControlName="image2" class="form-control" />
+                <label for="imageUpload2"><span class="mb-20"><img src="../../assets/images/submission_add_y.svg"></span><span>Full Length Profile</span></label>
+            </div>
+            <div class="avatar-preview">
+                <div id="imagePreview2" class="image-submition2 image-submition"></div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+                <input type="file" id="imageUpload3" 
+                accept=".png, .jpg, .jpeg" formControlName="image3" class="form-control"/>
+                <label for="imageUpload3"><span class="mb-20"><img src="../../assets/images/submission_add_y.svg"></span><span>Portrait Length</span></label>
+            </div>
+            <div class="avatar-preview">
+                <div id="imagePreview3" class="image-submition3 image-submition"></div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+                <input type="file" id="imageUpload4" 
+                accept=".png, .jpg, .jpeg" formControlName="image4" class="form-control"/>
+                <label for="imageUpload4"><span class="mb-20"><img src="../../assets/images/submission_add_y.svg"></span><span>Close Up <br><small>(Hair Pulled Back)</small></span></label>
+            </div>
+            <div class="avatar-preview">
+                <div id="imagePreview4" class="image-submition4 image-submition"></div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+                <input type="file" id="imageUpload5"
+                 accept=".png, .jpg, .jpeg"  formControlName="image5" class="form-control"/>
+                <label for="imageUpload5"><span class="mb-20"><img src="../../assets/images/submission_add_y.svg"></span><span>Close Up Profile <br><small>(Hair Pulled Back)</small></span></label>
+            </div>
+            <div class="avatar-preview">
+                <div id="imagePreview5" class="image-submition5 image-submition"></div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+                <input type="file" id="imageUpload6" 
+                accept=".png, .jpg, .jpeg" formControlName="image6" class="form-control" />
+                <label for="imageUpload6"><span class="mb-20"><img src="../../assets/images/submission_add_y.svg"></span><span>Personality Pic <br><small>(Smiles Are Okay Here)</small></span></label>
+            </div>
+            <div class="avatar-preview">
+                <div id="imagePreview6" class="image-submition6 image-submition"></div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="mb-0">First Name</label> <span class="mandatory">*</span>
+                                        <input type="text" formControlName="first_name" class="form-control" autocomplete="off" 
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('first_name').valid}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="mb-0">Last Name</label> <span class="mandatory">*</span>
+                                        <input type="text" formControlName="last_name" class="form-control" autocomplete="off" 
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('last_name').valid  }">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="mb-0">Instagram URL</label>
+                                        <input type="url" pattern="https?://.+" required  formControlName="instagram_url" class="form-control" autocomplete="off"
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('instagram_url').valid  }">
+                                    </div>
+                                </div>  
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="mb-0">Email</label> <span class="mandatory">*</span>
+                                        <input type="email" formControlName="email" class="form-control" autocomplete="off" 
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('email').valid  }">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="mb-0">Phone Number</label> <span class="mandatory">*</span>
+                                        <input type="tel" [textMask]="{mask: mask}"  formControlName="phone" class="form-control" autocomplete="off" 
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('phone').valid  }">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="mb-0">Address</label> <span class="mandatory">*</span>
+                                        <input type="text" formControlName="address" class="form-control" autocomplete="off" 
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('address').valid  }">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="mb-0">City</label> <span class="mandatory">*</span>
+                                        <input type="text" formControlName="city" class="form-control" autocomplete="off" 
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('city').valid  }">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="mb-0">Country</label> <span class="mandatory">*</span>
+                                        <input type="text" formControlName="country" class="form-control" autocomplete="off" 
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('country').valid  }">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="mb-0">Zip/Postal Code</label> <span class="mandatory">*</span>
+                                        <input type="text" formControlName="zip_code" class="form-control" autocomplete="off" 
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('zip_code').valid  }">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="mb-0">State</label> <span class="mandatory">*</span>
+                                        <input type="text" formControlName="state" class="form-control" autocomplete="off" 
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('state').valid  }">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group mb-30">
+                                        <label class="mb-0">Date of Birth</label> <span class="mandatory">*</span>
+                                        <input id="datepick" type="date" formControlName="date"  class="form-control" autocomplete="off" 
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('date').valid  }">
+                                    </div>
+                                    <p class="small">We typically scout female identified persons ages 15 and up. Applicants under 18 years of age must have parental/guardian consent. Please provide info below.</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="list-group-item" data-acc-step>
+                        <h5 class="mb-0" data-acc-title>Your Story</h5>
+                        <div class="list-group-inner" data-acc-content>
+                            <div class="form-group">
+                                <label>Briefly tell us about yourself.</label> <span class="mandatory">*</span>
+                                <textarea class="form-control" formControlName="about_yourself" cols="50" rows="5" placeholder="140 character or more"
+                                [ngClass]="{ 'is-invalid': submitted && !joinForm.get('about_yourself').valid}"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Tell us about a movement you are passionate about.</label> <span class="mandatory">*</span>
+                                <textarea class="form-control" formControlName="about_your_passion" cols="50" rows="5" placeholder="140 character or more"
+                                [ngClass]="{ 'is-invalid': submitted && !joinForm.get('about_your_passion').valid  }"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>What empowers you?</label> <span class="mandatory">*</span>
+                                <textarea class="form-control" formControlName="empower" cols="50" rows="5" placeholder="140 character or more"
+                                [ngClass]="{'is-invalid': submitted && !joinForm.get('empower').valid}"></textarea>
+                            </div>
+                            <div class="form-group mb-30">
+                                <label>Do you already have representation?</label> <span class="mandatory">*</span>
+                                <div class="form-check"   >
+
+                            <input id="repres-yes" type="radio" value="yes" name="already_have_representation" 
+                            formControlName="already_have_representation"
+                            class="form-check-input mr-10"[ngClass]="{'is-invalid': submitted && !joinForm.get('already_have_representation').valid}"> 
+                            <label class="form-check-label mr-30" for="repres-yes">Yes</label>
+
+                            <input id="repres-no" type="radio" value="no"  name="already_have_representation" 
+                            formControlName="already_have_representation"
+                            class="mr-10 form-check-input"[ngClass]="{'is-invalid': submitted && !joinForm.get('already_have_representation').valid}" > 
+                            <label class="form-check-label" for="repres-no">No</label>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="list-group-item" data-acc-step>
+                        <h5 class="mb-0" data-acc-title>Measurements</h5>
+                        <div class="list-group-inner" data-acc-content>
+
+                            <p class="mb-30">
+                                To ensure the most accurate measurements, please wear a bikini and have someone you are comfortable with measure you. Please use a measuring tape.
+                            </p>
+
+                            <ul class="measurement-list d-flex">
+                               <li>
+                                   <img src="../../assets/images/measurement/Submission-Photo-Measurement-2.jpg" class="mb-10">
+                                   <p class="mb-30">Place the measuring tape around the fullest part of your bust.</p>
+                               </li>
+                               <li>
+                                   <img src="../../assets/images/measurement/Submission-Photo-Measurement-1.jpg" class="mb-10">
+                                   <p class="mb-30">Place the measuring tape approximately 1 inch above your belly button.</p>
+                               </li>
+                               <li>
+                                   <img src="../../assets/images/measurement/Submission-Photo-Measurement-3.jpg" class="mb-10">
+                                   <p class="mb-30">Stand feet together, place the measuring tape around the largest part of your lower hip and bottom.</p>
+                               </li>
+                            </ul>
+
+                            <div class="row">
+                                <div class="col-sm-12 mb-30">
+                                    <span>Us </span>
+                                    <label class="switch">
+                                      <input type="checkbox">
+                                      <span class="slider round"></span>
+                                    </label>
+                                    <span>Metric</span>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="mb-0">Bust</label> <span class="mandatory">*</span>
+                                        <select class="form-control" formControlName="bust"
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('bust').valid  }">
+                                           <option class="" selected="selected" disabled="disabled">Select</option>
+                                           <option>15</option>
+                                           <option>15.5</option>
+                                           <option>16</option>
+                                           <option>16.5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="mb-0">Waist</label> <span class="mandatory">*</span>
+                                        <select class="form-control" formControlName="waist"
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('waist').valid  }">
+                                           <option class="" selected="selected" disabled="disabled">Select</option>
+                                           <option>15</option>
+                                           <option>15.5</option>
+                                           <option>16</option>
+                                           <option>16.5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="mb-0">Hip</label> <span class="mandatory">*</span>
+                                        <select class="form-control" formControlName="hip"
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('hip').valid  }">
+                                           <option class="" selected="selected" disabled="disabled">Select</option>
+                                           <option>15</option>
+                                           <option>15.5</option>
+                                           <option>16</option>
+                                           <option>16.5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="mb-0">Height</label> <span class="mandatory">*</span>
+                                        <select class="form-control" formControlName="height"
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('height').valid  }">
+                                           <option class="" selected="selected" disabled="disabled">Select</option>
+                                           <option>5'</option>
+                                           <option>5' 1/4"</option>
+                                           <option>5' 1/2"</option>
+                                           <option>5' 3/4"</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="mb-0">Shoe</label> <span class="mandatory">*</span>
+                                        <select class="form-control" formControlName="shoe"
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('shoe').valid  }">
+                                           <option class="" selected="selected" disabled="disabled">Select</option>
+                                           <option>5</option>
+                                           <option>5.5</option>
+                                           <option>6</option>
+                                           <option>6.5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="mb-0">Hair</label> <span class="mandatory">*</span>
+                                        <select class="form-control" formControlName="hair"
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('hair').valid  }">
+                                           <option class="" selected="selected" disabled="disabled">Select</option>
+                                           <option>Black</option>
+                                           <option>Brown</option>
+                                           <option>Auburn</option>
+                                           <option>Blonde</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="mb-0">Eye</label> <span class="mandatory">*</span>
+                                        <select class="form-control" formControlName="eye"
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('eye').valid  }">
+                                           <option class="" selected="selected" disabled="disabled">Select</option>
+                                           <option>Black</option>
+                                           <option>Brown</option>
+                                           <option>Auburn</option>
+                                           <option>Blonde</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="mb-0">Cup</label> <span class="mandatory">*</span>
+                                        <select class="form-control" formControlName="cup"
+                                        [ngClass]="{ 'is-invalid': submitted && !joinForm.get('cup').valid  }">
+                                           <option class="" selected="selected" disabled="disabled">Select</option>
+                                           <option>A</option>
+                                           <option>A/B</option>
+                                           <option>B</option>
+                                           <option>B/C</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-check mb-30">
+                                <input type="checkbox" class="form-check-input" formControlName="confirm"
+                                [ngClass]="{ 'is-invalid': submitted && !joinForm.get('confirm').valid  }"> <label class="form-check-label"> I confirm that the images and information being submitted are of myself, or that I have permission to submit the images and information on behalf of the applicant.</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <p *ngIf="datasaved" class="success"> <i class="fas fa-check"></i> <span>{{msg}}</span> </p>
+            </form>
+        </div>
+
+    </div>
+
+
+
+<app-footer></app-footer>
